@@ -1,0 +1,81 @@
+
+  <!--  -->
+  <form >
+    <div class="navbar">
+      <mat-toolbar color="primary">
+      
+      <div class="navbar-menu">
+      <!-- <button mat-button (click)="sidenav.open()" ><mat-icon>menu</mat-icon></button> -->
+    </div>
+      <span style="text-align: center;">Welcome to NEWS Channel</span>  
+      <span class="example-spacer"></span>
+      
+      <button mat-button [matMenuTriggerFor]="appMenu"><mat-icon>settings</mat-icon></button>
+      
+    </mat-toolbar>
+    </div>
+    
+    <mat-menu #appMenu="matMenu">
+      <button mat-menu-item> Settings </button>
+      <button mat-menu-item> Help </button>
+      <button mat-menu-item> FAQ's </button>
+      <button mat-menu-item> Settings </button>
+      <!-- <a mat-menu-item routerLink="/login"> Log Out </a> -->
+      <!-- <a mat-flat-button   (click)=register() routerLink="/login" color="primary">Create Account</a> -->
+    </mat-menu>
+
+    <div class="main">
+      <div class="center">
+    <mat-card class="example-card">
+  <table align="center" style="padding-top: 200px;">
+          <tbody>
+          
+                  <tr>
+                       <td>  
+                           <mat-form-field>
+                              <input matInput type="email" [(ngModel)]="user.emailId" name="email" placeholder="Enter Email-Id"/>
+                          </mat-form-field>
+                       </td>
+                  </tr>
+              <!-- <tr>
+                  <td>
+              <mat-form-field class="example-full-width">
+                      <input matInput type="email" [(ngModel)]="emailId" placeholder="Enter Email-Id" [formControl]="emailFormControl">
+                      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                        Please enter a valid email address
+                      </mat-error>
+                      <mat-error *ngIf="emailFormControl.hasError('required')">
+                        Email is <strong>required</strong>
+                      </mat-error>
+                    </mat-form-field>
+                  </td>
+                  </tr> -->
+        
+  
+                  <tr>
+                          <td>  
+                              <mat-form-field>
+                                 <input matInput type="password" [(ngModel)]="user.password" name="password" placeholder="Enter Password">
+                             </mat-form-field>
+                          </td>
+                      </tr>
+  
+          </tbody>
+      </table>
+  
+      <table align="center">
+          <!-- <button mat-flat-button (click)=navigateToLogin() value ="Create Account" color="primary">Primary</button> -->
+        
+        <tr>
+            <td>
+                  <button mat-flat-button   (click)=signIn()  color="primary">Sign In</button>
+            </td>
+            <td>
+                  <button mat-flat-button   (click)=signUp()  color="primary">Sign Up</button>
+            </td>
+        </tr>                  
+      </table>
+    </mat-card>
+  </div>
+</div>
+  </form>
